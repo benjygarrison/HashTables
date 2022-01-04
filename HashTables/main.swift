@@ -10,7 +10,11 @@ import Foundation
 /*
  Key/value pair structure for searching super fast. Swift Dictionary = hash table.
  In Swift, all built in data structures (String, Int, etc.) already have a hash value. Just add .hashValue to end of variable name to retrieve its hash value.
- Has tables are super fast!! --> standard case O(1), worst case O(n). Assume O(1) for interview purposes.
+ 
+ MARK: Has tables are super fast!! --> standard case O(1), worst case O(n) [if walking linked lists due to collisions]. Assume O(1) for interview purposes.
+ MARK: Know the basics what hashing does in the language you're interviewing for.
+ MARK: Know how collisions are handled --> Linked lists
+ MARK: Know that hash tables do not use literal hash value to perform lookup, they use a modulus operator which creates the actual index values
  
  You can use the modulo operator to reduce the aray size of your hash value array:
  Ex:
