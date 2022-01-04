@@ -120,6 +120,7 @@ class HashTable {
         }
     }
     
+    //allows you to simply add values without going through the above functions
     subscript(key: String) -> String? {
         get {
             get(key)
@@ -131,7 +132,10 @@ class HashTable {
     }
 }
 
+
+//add (put) values
 let hashTable = HashTable()
+print("Added values, with sample collision:")
 hashTable.put("Ben Garrison", "521-1234")
 hashTable.put("Lisa Smith", "521-8976")
 hashTable.put("Sam Doe", "521-5030")
@@ -140,4 +144,16 @@ hashTable.put("Ted Baker", "418-4165")
 
 hashTable.prettyPrint()
 
+//retrieve (get) values
+print("")
+print("Retrieved values, including one nonexistent")
+print(hashTable.get("Ben Garrison") ?? "nothing here")
+print(hashTable.get("Hana Inoue") ?? "nothing here")
+print(hashTable.get("Ted Baker") ?? "nothing here")
+print(hashTable.get("Bob malugaluga") ?? "☠️")
 
+
+print("")
+print("Adding using Subscript function")
+hashTable["Benji Garrison"] = "408-242-8796"
+print(hashTable["Benji Garrison"] ?? "☠️")
